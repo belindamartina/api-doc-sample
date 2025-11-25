@@ -21,8 +21,8 @@ https://api.example.com/v1
 ### Request Body
 ```json
 {
-  "name": "John Doe",
-  "email": "john@example.com",
+  "name": "Justin Bieber",
+  "email": "justin@example.com",
   "password": "123456"
 }
 ```
@@ -41,7 +41,7 @@ https://api.example.com/v1
 ### Request Body
 ```json
 {
-  "email": "john@example.com",
+  "email": "justin@example.com",
   "password": "123456"
 }
 ```
@@ -59,8 +59,8 @@ https://api.example.com/v1
 ```json
 {
   "id": 1,
-  "name": "John Doe",
-  "email": "john@example.com"
+  "name": "Justin Bieber",
+  "email": "justin@example.com"
 }
 ```
 
