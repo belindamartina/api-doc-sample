@@ -1,7 +1,7 @@
 * [🏠 Home](README.md)
 
 * [🚦 API Reference](user-api-docs.md)
-  * [Authentication](auth.md)
+  * [Authentication](user-api-docs.md)
   * [User Endpoints](user-api-docs.md)
 
 * [📖 User Guides](guides/dashboard-setup.md)
