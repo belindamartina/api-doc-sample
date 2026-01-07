@@ -1,10 +1,3 @@
-* **Getting Started**
-  * [Introduction](README.md)
-  * [Quick Start](quick-start.md)
-
-* **API Reference**
-  * [User Endpoints](user-api-docs.md)
-  * [Authentication](auth.md)
-
-* **User Guides**
-  * [Password Reset Guide](guides/password-reset.md)
+* [🏠 Home](README.md)
+* [🚦 API Reference](user-api-docs.md)
+* [📏 Writing Style Guide](STYLE_GUIDE.md)
