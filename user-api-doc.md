@@ -1,82 +1,85 @@
-# Sample API Documentation  
-A mock API documentation written in Markdown to demonstrate structure, clarity, and technical writing style.
+# 🚦 User Management API Reference
+
+Welcome to the Belinda Martina User Management API. This documentation provides all the information required to integrate with our user and authentication services.
+
+> **Base URL:** `https://api.belindamartina.com/v1`
 
 ---
 
-# 🚀 Overview
-The **Sample User API** allows clients to register users, log in, and retrieve profiles.  
-This documentation includes endpoints, request formats, responses, and error handling.
+## 🔐 Authentication
 
-Base URL:
-https://api.example.com/v1
+This API uses **JWT (JSON Web Tokens)** for secure access. Most endpoints require an active session token to be passed in the request header.
 
+### Obtaining a Token
+To get an access token, send your credentials to the `/auth/login` endpoint.
 
----
+### Using the Token
+Include the token in the `Authorization` header using the `Bearer` schema:
 
-# 📌 Endpoints
+```http
+Authorization: Bearer <your_jwt_token_here>
+```
 
-## 1. Register User  
+## 👥 User Endpoints
+
+### 1. Register Account
 `POST /users/register`
 
-### Request Body
+Initialize a new user account. This is a public endpoint.
+
+**Request Body (JSON):**
+| Parameter | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `username` | `string` | Yes | Unique handle (3-20 characters). |
+| `email` | `string` | Yes | A valid, unique email address. |
+| `password` | `string` | Yes | Minimum 8 characters, alphanumeric. |
+
+**Example Request:**
 ```json
 {
-  "name": "Justin Bieber",
-  "email": "justin@example.com",
-  "password": "123456"
+  "username": "belinda_dev",
+  "email": "hello@belindamartina.com",
+  "password": "SecurePassword123!"
 }
 ```
 
-### Successful Response
+### 2. User Login
+`POST /auth/login`
+
+response (200 OK):
 ```json
 {
-  "status": "success",
-  "message": "User registered successfully."
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "expires_in": 86400
 }
 ```
 
-## 2. Login
-`POST /users/login`
+## 🌍 Localization & I18n
 
-### Request Body
-```json
-{
-  "email": "justin@example.com",
-  "password": "123456"
-}
-```
-
-### Successful Response
-```json
-{
-  "token": "abc123xyz"
-}
-```
-
-## 3. Get User Profile
-`GET /users/me`
-#### Requires authentication token.
-```json
-{
-  "id": 1,
-  "name": "Justin Bieber",
-  "email": "justin@example.com"
-}
-```
+This API supports multi-language responses for error messages.
+* **Header:** `Accept-Language`
+* **Supported Locales:** `en` (English), `id` (Indonesian)
 
 ---
 
-# 🔧 Error Handling
-### Common error response :
+## ❌ Error Handling
 
+| Status Code | Meaning | Description |
+| :--- | :--- | :--- |
+| `200` | Success | Request completed successfully. |
+| `401` | Auth Error | Invalid or expired token. |
+| `429` | Rate Limit | Too many requests. |
+
+**Error Response Body:**
 ```json
 {
-  "status": "error",
-  "message": "Invalid email or password."
+  "error_code": "AUTH_EXPIRED",
+  "message": "Sesi Anda telah berakhir. Silakan masuk kembali.",
+  "request_id": "req_88291"
 }
 ```
----
-# 📑 Notes
-- Use HTTPS for all requests.
-- Token must be included in Authorization header.
-- This document is for demonstration and writing quality only.
+
+##📏 Rate Limiting
+To ensure system stability, we limit requests to:
+*100 requests per minute per IP address.
+*Exceeding this will return a 429 Too Many Requests status.
