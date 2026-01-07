@@ -1,11 +1,14 @@
-* [🏠 Home](README.md)
+* [🏠 Home](/)
 
-* [🚦 API Reference](user-api-docs.md)
-  * [Authentication](user-api-docs.md)
-  * [User Endpoints](user-api-docs.md)
+* **Developer Reference**
+  * [🚦 API Reference](/user-api-docs)
+  * [🔐 Authentication](/user-api-docs#authentication)
+  * [👥 User Endpoints](/user-api-docs#user-endpoints)
 
-* [📖 User Guides](guides/dashboard-setup.md)
-  * [Dashboard Setup](guides/dashboard-setup.md)
-  * [Password Reset](guides/password-reset.md)
+* **End-User Guides**
+  * [📖 User Guides](/guides/dashboard-setup)
+  * [🛠️ Dashboard Setup](/guides/dashboard-setup)
+  * [🔄 Password Reset](/guides/password-reset)
 
-* [📏 Writing Style Guide](STYLE_GUIDE.md)
+* **Standards**
+  * [📏 Writing Style Guide](/STYLE_GUIDE)
