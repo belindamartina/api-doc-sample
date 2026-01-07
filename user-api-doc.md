@@ -79,7 +79,9 @@ This API supports multi-language responses for error messages.
 }
 ```
 
-##📏 Rate Limiting
+## 📏 Rate Limiting
+
 To ensure system stability, we limit requests to:
-*100 requests per minute per IP address.
-*Exceeding this will return a 429 Too Many Requests status.
+
+* 100 requests per minute per IP address.
+* Exceeding this will return a 429 Too Many Requests status.
